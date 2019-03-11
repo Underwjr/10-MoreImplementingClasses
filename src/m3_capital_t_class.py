@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_simple_t()
+    run_test_simple_t()
     # run_test_set_colors()
     # run_test_move_by()
     # run_test_clone()
@@ -165,11 +165,16 @@ class CapitalT(object):
         self.width = width
         self.height = height
         self.letter_thickness = letter_thickness
-        self.h_rect = rg.Rectangle(intersection_center.x - width, intersection_center.y + width)
-        self.v_rect = 
+        self.h_rect = rg.Rectangle(rg.Point(intersection_center.x - width/2,
+                                            intersection_center.y - letter_thickness/2),
+                                   rg.Point(intersection_center.x + width/2, intersection_center.y + letter_thickness/2))
+        self.v_rect = rg.Rectangle(rg.Point(intersection_center.x - letter_thickness/2,
+                                            intersection_center.y - letter_thickness/2),
+                                   rg.Point(intersection_center.x + letter_thickness/2,
+                                            intersection_center.y +(height - letter_thickness/2)))
 
         # ---------------------------------------------------------------------
-        # TODO: 3.
+        # done: 3.
         #   READ the above specification, including the Example.
         #   Implement this method, using the instance variables
         #      h_rect
@@ -196,6 +201,10 @@ class CapitalT(object):
         Type hints:
           :type window: rg.RoseWindow
         """
+        v_rect = self.v_rect
+        h_rect = self.h_rect
+        v_rect.attach_to(window)
+        h_rect.attach_to(window)
         # ---------------------------------------------------------------------
         # TODO: 4.
         #   READ the above specification, including the Example.
