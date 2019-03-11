@@ -120,13 +120,16 @@ class Baby(object):
         print('Thank you for feeding ' + baby)
 
     def hour_passes(self):
+        if self.count_food == 1:
+            self.count_time = 0
+            self.count_food = 0
         baby = self.baby_name
         self.count_time = self.count_time + 1
         if self.count_time == 1 or self.count_food == 1:
             print('Baby ' + baby + ' is sleeping.')
         if self.count_time == 2 or self.count_food == 2:
             print('Baby ' + baby + ' is awake. Time for food.')
-        if self.count_time == 3 or self.count_food == 3:
+        if self.count_time >= 3 or self.count_food >= 3:
             print('Baby ' + baby + ' is CRYING Uncontrollably! Feed the Baby!')
 
 
