@@ -3,8 +3,8 @@ A   CapitalT   class and functions that use/test it.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jairyq Underwood.
+"""  #Done. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -161,6 +161,13 @@ class CapitalT(object):
           :type height:              int
           :type letter_thickness:    int
         """
+        self.intersection_center = intersection_center
+        self.width = width
+        self.height = height
+        self.letter_thickness = letter_thickness
+        self.h_rect = rg.Rectangle(intersection_center.x - width, intersection_center.y + width)
+        self.v_rect = 
+
         # ---------------------------------------------------------------------
         # TODO: 3.
         #   READ the above specification, including the Example.
