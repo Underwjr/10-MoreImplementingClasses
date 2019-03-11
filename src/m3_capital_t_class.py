@@ -21,9 +21,9 @@ def main():
     print(' to run the testing code as you complete the TODOs.')
 
     run_test_simple_t()
-    # run_test_set_colors()
-    # run_test_move_by()
-    # run_test_clone()
+    run_test_set_colors()
+    run_test_move_by()
+    run_test_clone()
 
 
 def run_test_simple_t():
@@ -172,7 +172,6 @@ class CapitalT(object):
                                             intersection_center.y - letter_thickness/2),
                                    rg.Point(intersection_center.x + letter_thickness/2,
                                             intersection_center.y +(height - letter_thickness/2)))
-
         # ---------------------------------------------------------------------
         # done: 3.
         #   READ the above specification, including the Example.
@@ -206,7 +205,7 @@ class CapitalT(object):
         v_rect.attach_to(window)
         h_rect.attach_to(window)
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # Done: 4.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -237,8 +236,14 @@ class CapitalT(object):
           :type fill_color:    str
           :type outline_color: str
         """
+        v_rect = self.v_rect
+        h_rect = self.h_rect
+        v_rect.fill_color = fill_color
+        h_rect.fill_color = fill_color
+        v_rect.outline_color = outline_color
+        h_rect.outline_color = outline_color
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # Done: 5.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -270,8 +275,17 @@ class CapitalT(object):
           :type dx: int
           :type dy: int
         """
+        self.v_rect.corner_1.x += dx
+        self.v_rect.corner_1.y += dy
+        self.v_rect.corner_2.x += dx
+        self.v_rect.corner_2.y += dy
+        self.h_rect.corner_1.x += dx
+        self.h_rect.corner_1.y += dy
+        self.h_rect.corner_2.x += dx
+        self.h_rect.corner_2.y += dy
+
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # Done: 6.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -303,8 +317,15 @@ class CapitalT(object):
         Type hints:
           :rtype: CapitalT
         """
+        intersection_center = self.intersection_center
+        width = self.width
+        height = self.height
+        letter_thickness = self.letter_thickness
+        t_clone = CapitalT(intersection_center, width, height, letter_thickness)
+        t_clone.set_colors(self.v_rect.fill_color, self.h_rect.outline_color)
+        return t_clone
         # ---------------------------------------------------------------------
-        # TODO: 7.
+        # Done 7.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
